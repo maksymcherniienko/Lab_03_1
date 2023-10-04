@@ -2,7 +2,7 @@
 // Чернієнко Максим
 // Лабораторна робота № 3.1
 // Розгалуження, задане формулою: функція однієї змінної.
-// Варіант 27
+// Варіант 25
 
 #include<iostream>
 #include<cmath>
@@ -16,26 +16,25 @@ int main()
 	double x;
 	double y1;
 	double y2;
+	double A;
 	cout << "x = "; cin >> x;
+	A = 8.1 + pow(x, 3);
 // спосіб 1: розгалуження в скороченій формі
-		if (x < 4)
-			y1 = abs(9 * pow(x, 3) + 2) + 3 * pow(x, 5) - pow(x, 3) + 2 * x - 1;
-		if (4 <= x < 7)
-			y1 = abs(9 * pow(x, 3) + 2) + atan((x - 2) / 3);
-		if (x >= 7)
-			y1 = abs(9 * pow(x, 3) + 2) + log10(2 * pow(x, -1) + pow(E, 3 * x + 1));
+	if (x < (-3.5))
+		y1 = A + 1 - pow(x, -5);
+	if ((-3.5) <= x < 1)
+		y1 = A + cos(abs(x + 1))/sin(abs(x + 1));
+	if (x >= 1)
+		y1 = A + atan(2 * x) - log10(x / 2);
 
+		cout << "y1 = " << y1 << endl;
 // спосіб 2: розгалуження в повній формі
-		if (x >= 7)
-			y2 = abs(9 * pow(x, 3) + 2) + log10(2 * pow(x, -1) + pow(E, 3 * x + 1));
+		if (x >= 1)
+			y2 = A + atan(2 * x) - log10(x / 2);
 		else
-			if (4 <= x < 7)
-				y2 = abs(9 * pow(x, 3) + 2) + atan((x - 2) / 3);
+			if ((-3.5) <= x < 1)
+				y2 = A + cos(abs(x + 1)) / sin(abs(x + 1));
 			else
-				y2 = abs(9 * pow(x, 3) + 2) + 3 * pow(x, 5) - pow(x, 3) + 2 * x - 1;
-	
-	 
-
-	cout << "y1 = " << y1 << endl;
-	cout << "y2 = " << y2 << endl;
+				y2 = A + 1 - pow(x, -5);
+		cout << "y2 = " << y2 << endl;
 }
