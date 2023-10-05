@@ -28,7 +28,15 @@ int main()
 	if (x >= 1)
 		B = atan((2 * x) - log10(x / 2));
 	y1 = A + B;
-	cout << "y1 = " << y1;
-
-
+	cout << "y1 = " << y1 << endl;
+// спосіб 2: розгалуження у повній формі
+	if (x<-3.5)
+		B = 1 - pow(x, -5);
+	else 
+		if (-3.5 <= x && x < 1)
+			B = 1 / tan(abs(x + 1));
+		else
+			B = atan((2 * x) - log10(x / 2));
+	y2 = A + B;
+	cout << "y2 = " << y2;
 }
